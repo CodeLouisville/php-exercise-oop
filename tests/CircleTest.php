@@ -46,4 +46,14 @@ class CircleTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('Type: 3', Circle::getTypeDescription());
     }
+
+    public function test_getFullDescription() {
+        $circle = new Circle(13);
+
+        $id = $circle->getId();
+        $name = str_shuffle(time());
+        $circle->name = $name;
+
+        $this->assertEquals('Circle<#' . $id . '>: ' . $name . ' - 13', $circle->getFullDescription());
+    }
 }

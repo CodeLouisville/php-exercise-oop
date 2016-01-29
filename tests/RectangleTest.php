@@ -19,4 +19,14 @@ class RectangleTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('Type: 2', Rectangle::getTypeDescription());
     }
+
+    public function test_getFullDescription() {
+        $rectangle = new Rectangle(6, 7);
+
+        $id = $rectangle->getId();
+        $name = str_shuffle(time());
+        $rectangle->name = $name;
+
+        $this->assertEquals('Rectangle<#' . $id . '>: ' . $name . ' - 6 x 7', $rectangle->getFullDescription());
+    }
 }

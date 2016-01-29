@@ -81,4 +81,19 @@ class ShapeTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('Type: 1', Shape::getTypeDescription());
     }
 
+    public function test_getId() {
+        $shape = new Shape(0, 0);
+
+        $this->assertRegExp('/[0-9a-f]{13}/', $shape->getId());
+    }
+
+    public function test_getFullDescription() {
+        $shape = new Shape(4, 5);
+
+        $id = $shape->getId();
+        $name = str_shuffle(time());
+        $shape->name = $name;
+
+        $this->assertEquals('Shape<#' . $id . '>: ' . $name . ' - 4 x 5', $shape->getFullDescription());
+    }
 }
