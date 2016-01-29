@@ -33,9 +33,7 @@ class CircleTest extends PHPUnit_Framework_TestCase
 
     public function test_inherits_from_shape()
     {
-        $class = new ReflectionClass('Circle');
-
-        $this->assertTrue($class->isSubclassOf('Shape'));
+        $this->assertEquals('Shape', get_parent_class('Rectangle'));
     }
 
     public function test_shape_type() {
