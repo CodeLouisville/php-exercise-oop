@@ -36,22 +36,22 @@ Getter method for $id property
 Area method to calculate and return the area of the Shape object
 */
     public function area() {
-        $area = $length x $width;
+        $area = $this->length * $this->width;
         return $area;
     }
 
 /*
-getTypeDexcription method to return the shape type
+getTypeDescription method to return the shape type
 */
     public static function getTypeDescription() {
-        return 'Type: ' . self::SHAPE_TYPE;
+        return 'Type: ' . static::SHAPE_TYPE;
     }
 
 /*
 getFullDescription method to return string describing the shape
 */
-    public getFullDescription() {
-        return 'Shape' . $this->id . ': ' . $this->name . ' - ' . $this->length . ' x ' . $this->width;
+    public function getFullDescription() {
+        return get_class($this) . '<#' . $this->id . '>: ' . $this->name . ' - ' . $this->length . ' x ' . $this->width;
     }
 
 }

@@ -9,8 +9,8 @@ class Circle extends Shape {
 Constructor accepts a radius parameter and intializes $radius.
 */
     function __construct($radius) {
+        parent::__construct($length = null, $width = null);
         $this->radius = $radius;
-        parent::__construct();
     }
 
 /*
@@ -18,14 +18,15 @@ area method to calculate and return the area of the circle (PI x r x r)
 */
     public function area() {
         $pi = pi();
-        $area = $pi x pow($radius, 2);
+        $area = $pi * pow($this->radius, 2);
         return $area;
     }
 
 /*
 getFullDescription method to return string describing the shape
+Uses getId() to get the Id because that's a protected property of the parent class
 */
-    public getFullDescription() {
-        return 'Circle' . $this->id . ': ' . $this->name . ' - ' . $this->radius;
+    public function getFullDescription() {
+        return get_class($this) . '<#' . $this->getId() . '>: ' . $this->name . ' - ' . $this->radius;
     }
 }
