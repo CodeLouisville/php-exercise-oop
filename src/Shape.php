@@ -35,10 +35,7 @@ Getter method for $id property
 /*
 Area method to calculate and return the area of the Shape object
 */
-    public function area($length, $width) {
-        $this->length = $length;
-        $this->width = $width;
-
+    public function area() {
         $area = $length x $width;
         return $area;
     }
