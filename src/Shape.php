@@ -11,6 +11,7 @@ class Shape {
     function __construct($length, $width) {
         $this->length = $length;
         $this->width = $width;
+        $this->id = uniqid();
     }
 
 /*
