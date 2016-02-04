@@ -6,6 +6,7 @@ For this PHP code exercise we will explore [Object Oriented Programming in PHP](
 - A [class constant](http://php.net/manual/en/language.oop5.constants.php) named `SHAPE_TYPE` with a value of `1`.
 - Four properties with different [visibilities](http://php.net/manual/en/language.oop5.visibility.php): a *public* `name`, a *protected* `length` and `width`, and a *private* `id`.
 - A [constuctor](http://php.net/manual/en/language.oop5.decon.php) which accepts a `length` and `width` parameter to initialize the respective properties.
+- The *constructor* shoudl also initialize the `id` property to a unique id. (hint: use PHP's [`uniqid()`](http://php.net/uniqid))
 - Getter and Setter methods for the `name` property.
 - A Getter method for the `id` property.
 - A *public* `area` method which calculates and returns the area of the `Shape` object.
