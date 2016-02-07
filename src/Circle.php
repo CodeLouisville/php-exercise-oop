@@ -11,7 +11,7 @@
     protected $radius;
 
     // method declarations
-    function __construct( $radius ) {      
+    public function __construct( $radius ) {      
       parent::__construct();
     }
     
