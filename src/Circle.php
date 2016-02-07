@@ -19,7 +19,7 @@
       return M_PI * $this->radius * $this->radius;
     }
      
-    public getFullDescription() {
+    public function getFullDescription() {
       return "Circle<#" . $this->id . ">: " . $this->name . " - " . $this->radius;
     }
       
