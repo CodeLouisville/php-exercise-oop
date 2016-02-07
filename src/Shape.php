@@ -12,7 +12,7 @@
     private $id;
      
     // method declarations   
-    function __construct ( $length = 0, $width = 0 ) {
+    public function __construct ( $length = 0, $width = 0 ) {
       $this->length = $length;
       $this->width = $width;      
       $this->id = uniqid();
