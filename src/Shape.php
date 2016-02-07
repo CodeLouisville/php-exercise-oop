@@ -12,7 +12,7 @@
     private $id;
      
     // method declarations   
-    public function __construct ( $length = 0, $width = 0 ) {
+    public function __construct ( $length = 0, $width = 0 ) {     
       $this->length = $length;
       $this->width = $width;      
       $this->id = uniqid();
@@ -35,14 +35,28 @@
     }
     
     static public function getTypeDescription() {
-      return "Type: " . self::SHAPE_TYPE;
+      return "Type: " . static::SHAPE_TYPE;
     }
     
     public function getFullDescription() {
-      return "Shape<#" . $this->id . ">: " . $this->name . " - " . $this->length . " x " . $this->width;
+      switch (static::SHAPE_TYPE) {
+        case 1: // case of SHAPE
+            $shapeName = "Shape";
+            $postfix = "<#" . $this->id . ">: " . $this->name . " - " . $this->length . " x " . $this->width;
+            break;
+        case 2: // case of RECTANGLE
+            $shapeName = "Rectangle";
+            $postfix = "<#" . $this->id . ">: " . $this->name . " - " . $this->length . " x " . $this->width;            
+            break;
+        case 3: // case of CIRCLE
+            $shapeName = "Circle";
+            $postfix = "<#" . $this->id . ">: " . $this->name . " - " . $this->radius;
+            break;
+      } // end switch
+      
+      return $shapeName . $postfix;
     }
     
-      
   } // end class
 
 ?>
